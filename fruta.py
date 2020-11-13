@@ -17,16 +17,25 @@ class Frutas():
 
 
 	def crear_fruta( self, color, ptn):
-		x = random.uniform( 0, self.bx)
-		y = random.uniform( 0, self.by)
+		x = random.uniform( 10, self.bx - 10)
+		y = random.uniform( 10, self.by - 10)
 		fru = [ x, y, color, ptn]
 
 		return fru
 
 	def cant_fru( self, cant = 1):
-		self.fruta.clear()
+		self.cuerpo.clear()
+
 		for i in range(cant):
 			self.cuerpo.append(self.crear_fruta( self.color[i], self.puntos[i]))
+
+		print(self.cuerpo)
+
+	def nuevas(cant = 1):
+		pass
+
+
+
 
 
 if __name__ == "__main__":

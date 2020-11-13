@@ -5,12 +5,14 @@ class Snake ():
 	dimensione_cuerpo = 5
 	borde = 1
 	color = "white"
+	pos_x = 0
+	pos_y = 0
 
 	def __init__(self, width = 800, height = 800):
-		pos_x = width/2
-		pos_y = height/2
-		for i in range(self.cant_cuerpo):
-			self.cuerpo.append([ pos_x, pos_y + (self.tamano() * i), self.color])
+		self.pos_x = width/2
+		self.pos_y = height/2
+		self.set()
+		
 
 	
 	def tamano(self):											#no estoy seguro
@@ -33,6 +35,10 @@ class Snake ():
 		self.cuerpo[0] = [ (self.cuerpo[0][0] + vel_x), (self.cuerpo[0][1] + vel_y), self.color]
 
 
+	def set(self):
+		self.cuerpo.clear()
+		for i in range(self.cant_cuerpo):
+			self.cuerpo.append([ self.pos_x, self.pos_y + (self.tamano() * i), self.color])
 
 
 
